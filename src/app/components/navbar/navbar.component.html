@@ -1,0 +1,16 @@
+<header class="nav" [class.nav--scrolled]="isScrolled()" [attr.aria-label]="ariaLabel()">
+  <div class="container nav__inner">
+    <button class="nav__logo" type="button" (click)="scrollTo('top')" aria-label="Aller en haut de page">
+      <span class="nav__logoMark">EB</span>
+    </button>
+
+    <nav class="nav__links" aria-label="Sections">
+      @for (link of links; track link.targetId) {
+        <button class="nav__link" type="button" (click)="scrollTo(link.targetId)">
+          {{ link.label }}
+        </button>
+      }
+    </nav>
+  </div>
+</header>
+
