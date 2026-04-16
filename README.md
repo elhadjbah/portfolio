@@ -1,59 +1,54 @@
-# Portfolio
+# Portfolio — Elhadj BAH
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.3.
+Portfolio personnel **Angular 21** (standalone + signals + `@if` / `@for` + **zoneless**), **SCSS** avec variables CSS custom, sans framework UI externe.
 
-## Development server
+## Prérequis
 
-To start a local development server, run:
+- Node.js **22**
+- npm
 
-```bash
-ng serve
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Lancer en local
 
 ```bash
-ng generate component component-name
+npm ci
+npm start
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Puis ouvrir `http://localhost:4200/`.
 
-```bash
-ng generate --help
-```
+## Personnalisation des données
 
-## Building
+- **Données centralisées**: `src/app/data/portfolio.data.ts`
+- **Interfaces**: `src/app/models/portfolio.model.ts`
 
-To build the project run:
+### Ajouter une certification
 
-```bash
-ng build
-```
+Ajoute un objet dans le tableau `certifications` de `src/app/data/portfolio.data.ts` (exemple fourni en JSDoc dans le fichier).
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## CV (PDF)
 
-## Running unit tests
+Le bouton “Voir le CV” pointe vers `assets/cv-elhadj-bah.pdf`.
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+Place ton fichier ici:
 
-```bash
-ng test
-```
+- `public/assets/cv-elhadj-bah.pdf`
 
-## Running end-to-end tests
+(le dossier `public/` est publié tel quel par Angular).
 
-For end-to-end (e2e) testing, run:
+## Déploiement automatique sur GitHub Pages (GitHub Actions)
 
-```bash
-ng e2e
-```
+Le workflow `/.github/workflows/deploy.yml` déploie à chaque push sur `main`:
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+- `npm ci`
+- `ng build --base-href "/<nom-du-repo>/"`
+- publication sur la branche `gh-pages` via `peaceiris/actions-gh-pages@v4`
 
-## Additional Resources
+### Étapes GitHub
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+1. Pousse le dépôt sur GitHub (branche `main`).
+2. Dans GitHub: **Settings → Pages**
+3. **Build and deployment**: sélectionne la source **Deploy from a branch**
+4. Choisis la branche **gh-pages** et le dossier **/**.
+
+Le site sera servi sur `https://<user>.github.io/<repo>/`.
+
