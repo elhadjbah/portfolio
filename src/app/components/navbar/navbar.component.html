@@ -1,4 +1,4 @@
-<header class="nav" [class.nav--scrolled]="isScrolled()" [attr.aria-label]="ariaLabel()">
+<header class="nav" [class.nav--scrolled]="isScrolled()" [class.nav--open]="menuOpen()" [attr.aria-label]="ariaLabel()">
   <div class="container nav__inner">
     <button class="nav__logo" type="button" (click)="scrollTo('top')" aria-label="Aller en haut de page">
       <span class="nav__logoMark">EB</span>
@@ -11,6 +11,30 @@
         </button>
       }
     </nav>
+
+    <button
+      class="nav__burger"
+      type="button"
+      (click)="toggleMenu()"
+      aria-label="Ouvrir le menu"
+      [attr.aria-expanded]="menuOpen()"
+    >
+      <span class="nav__burgerLine" aria-hidden="true"></span>
+      <span class="nav__burgerLine" aria-hidden="true"></span>
+      <span class="nav__burgerLine" aria-hidden="true"></span>
+    </button>
   </div>
+
+  @if (menuOpen()) {
+    <nav class="nav__menu" aria-label="Sections (mobile)">
+      <div class="container nav__menuInner">
+        @for (link of links; track link.targetId) {
+          <button class="nav__menuLink" type="button" (click)="scrollTo(link.targetId)">
+            {{ link.label }}
+          </button>
+        }
+      </div>
+    </nav>
+  }
 </header>
 

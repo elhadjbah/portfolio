@@ -1,4 +1,4 @@
-<section class="section" id="contact">
+<section class="section reveal" id="contact" style="transition-delay: 300ms">
   <div class="container">
     <header class="section-head">
       <h2 class="section-title">Contact</h2>
@@ -8,8 +8,9 @@
     <div class="contact__layout">
       <div class="contact__intro">
         <p class="contact__lead">
-          Besoin d’un renfort Full Stack / DevOps, d’un audit CI/CD ou d’un déploiement Kubernetes propre ?
-          Envoie-moi un message.
+          Disponible immédiatement pour un CDI ou une mission freelance.
+          <br />
+          N'hésitez pas à me contacter.
         </p>
 
         @if (successVisible()) {
@@ -23,7 +24,13 @@
         <div class="contact__row2">
           <label class="field">
             <span class="field__label">Nom</span>
-            <input class="field__input" type="text" formControlName="name" [attr.aria-invalid]="hasError('name')" />
+            <input
+              class="field__input"
+              [class.field__input--invalid]="hasError('name')"
+              type="text"
+              formControlName="name"
+              [attr.aria-invalid]="hasError('name')"
+            />
             @if (hasError('name')) {
               <span class="field__error">Nom requis.</span>
             }
@@ -31,7 +38,13 @@
 
           <label class="field">
             <span class="field__label">Email</span>
-            <input class="field__input" type="email" formControlName="email" [attr.aria-invalid]="hasError('email')" />
+            <input
+              class="field__input"
+              [class.field__input--invalid]="hasError('email')"
+              type="email"
+              formControlName="email"
+              [attr.aria-invalid]="hasError('email')"
+            />
             @if (hasError('email')) {
               <span class="field__error">Email requis et valide.</span>
             }
@@ -40,7 +53,13 @@
 
         <label class="field">
           <span class="field__label">Sujet</span>
-          <input class="field__input" type="text" formControlName="subject" [attr.aria-invalid]="hasError('subject')" />
+          <input
+            class="field__input"
+            [class.field__input--invalid]="hasError('subject')"
+            type="text"
+            formControlName="subject"
+            [attr.aria-invalid]="hasError('subject')"
+          />
           @if (hasError('subject')) {
             <span class="field__error">Sujet requis.</span>
           }
@@ -50,6 +69,7 @@
           <span class="field__label">Message</span>
           <textarea
             class="field__input field__textarea"
+            [class.field__input--invalid]="hasError('message')"
             rows="6"
             formControlName="message"
             [attr.aria-invalid]="hasError('message')"
@@ -60,7 +80,7 @@
         </label>
 
         <div class="btn-row">
-          <button class="btn btn-primary" type="submit" [disabled]="!canSubmit()">Envoyer</button>
+          <button class="btn btn-primary" type="submit" [disabled]="!canSubmit()">Envoyer le message</button>
         </div>
       </form>
     </div>
