@@ -1,4 +1,4 @@
-<section class="section" id="experience">
+<section class="section reveal" id="experience" style="transition-delay: 150ms">
   <div class="container">
     <header class="section-head">
       <h2 class="section-title">Parcours</h2>
@@ -7,7 +7,7 @@
 
     <div class="timeline" role="list">
       @for (xp of items; track xp.period + xp.title) {
-        <article class="timeline__item" role="listitem">
+        <article class="timeline__item tl-item reveal" role="listitem" [style.transition-delay.ms]="$index * 100">
           <div class="timeline__dot" aria-hidden="true"></div>
           <div class="timeline__content">
             <p class="timeline__period">{{ xp.period }}</p>

@@ -1,4 +1,4 @@
-<section class="section" id="projects">
+<section class="section reveal" id="projects" style="transition-delay: 200ms">
   <div class="container">
     <header class="section-head">
       <h2 class="section-title">Projets</h2>
@@ -7,7 +7,7 @@
 
     <div class="projects__grid">
       @if (featured(); as fp) {
-        <article class="projects__card projects__card--featured">
+        <article class="projects__card projects__card--featured proj-card reveal" style="transition-delay: 0ms">
           <div class="projects__head">
             @if (fp.badge) {
               <span class="tag">{{ fp.badge }}</span>
@@ -35,7 +35,7 @@
       }
 
       @for (p of others(); track p.id) {
-        <article class="projects__card">
+        <article class="projects__card proj-card reveal" [style.transition-delay.ms]="$index * 80">
           <div class="projects__head">
             <h3 class="projects__title">{{ p.title }}</h3>
           </div>

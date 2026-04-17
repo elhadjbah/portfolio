@@ -36,8 +36,7 @@ export const skillCategories: SkillCategory[] = [
   },
   {
     title: 'Outils & méthodes',
-    tags: ['PostgreSQL', 'MongoDB', 'Git', 'Sonar', 'Scrum/Agile', 'Jira', 'Postman'],
-    span: 3
+    tags: ['PostgreSQL', 'MongoDB', 'Git', 'Sonar', 'Scrum/Agile', 'Jira', 'Postman']
   }
 ];
 

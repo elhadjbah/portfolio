@@ -21,8 +21,9 @@
 }
 
 .contact__form {
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  background: #ffffff;
   padding: 18px;
 }
 
@@ -49,14 +50,17 @@
   border-radius: var(--radius-sm);
   padding: 10px 12px;
   font: inherit;
-  background: transparent;
+  background: #f9f8f6;
   transition: border-color var(--t) var(--ease), background var(--t) var(--ease);
 }
 
 .field__input:focus {
   outline: none;
-  border-color: color-mix(in srgb, var(--text) 25%, var(--border));
-  background: color-mix(in srgb, var(--tag-bg) 65%, transparent);
+  border-color: #1a1a1a;
+}
+
+.field__input--invalid {
+  border-color: #d92d20;
 }
 
 .field__textarea {
@@ -75,7 +79,7 @@ button[disabled] {
   cursor: not-allowed;
 }
 
-@media (max-width: 920px) {
+@media (max-width: 599px) {
   .contact__layout {
     grid-template-columns: 1fr;
   }

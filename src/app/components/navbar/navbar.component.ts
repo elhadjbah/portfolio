@@ -19,6 +19,7 @@ export class NavbarComponent {
 
   readonly links = navLinks;
   readonly isScrolled = signal(false);
+  readonly menuOpen = signal(false);
 
   readonly ariaLabel = computed(() => (this.isScrolled() ? 'Navigation (scrolled)' : 'Navigation'));
 
@@ -40,7 +41,16 @@ export class NavbarComponent {
   scrollTo(targetId: string): void {
     const el = this.document.getElementById(targetId);
     if (!el) return;
+    this.menuOpen.set(false);
     el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  toggleMenu(): void {
+    this.menuOpen.update(v => !v);
+  }
+
+  closeMenu(): void {
+    this.menuOpen.set(false);
   }
 }
 

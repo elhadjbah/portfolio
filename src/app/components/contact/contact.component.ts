@@ -42,8 +42,9 @@ export class ContactComponent {
 
     const payload = this.form.getRawValue();
 
-    // TODO: brancher EmailJS ou une API Spring Boot pour envoyer `payload`.
-    // Exemple: POST /api/contact avec { name, email, subject, message }.
+    // TODO: remplacer par EmailJS
+    // import emailjs from '@emailjs/browser';
+    // emailjs.send('SERVICE_ID', 'TEMPLATE_ID', payload)
     void payload;
 
     this.form.reset();

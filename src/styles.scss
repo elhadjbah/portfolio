@@ -93,14 +93,24 @@ img {
 .tag {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 6px 10px;
-  border-radius: 999px;
-  background: var(--tag-bg);
-  border: 1px solid color-mix(in srgb, var(--border) 70%, transparent);
-  color: var(--text);
-  font-size: 0.9rem;
+  padding: 3px 10px;
+  border-radius: 4px;
+  background: #f0efed;
+  border: 1px solid #e5e5e5;
+  color: #1a1a1a;
+  font-size: 12px;
   white-space: nowrap;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .btn-row {
