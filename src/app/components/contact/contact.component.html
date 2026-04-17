@@ -1,0 +1,69 @@
+<section class="section" id="contact">
+  <div class="container">
+    <header class="section-head">
+      <h2 class="section-title">Contact</h2>
+      <p class="section-subtitle">Discutons de ton besoin, je réponds rapidement.</p>
+    </header>
+
+    <div class="contact__layout">
+      <div class="contact__intro">
+        <p class="contact__lead">
+          Besoin d’un renfort Full Stack / DevOps, d’un audit CI/CD ou d’un déploiement Kubernetes propre ?
+          Envoie-moi un message.
+        </p>
+
+        @if (successVisible()) {
+          <div class="contact__success" role="status" aria-live="polite">
+            Message envoyé. Merci, je reviens vers toi rapidement.
+          </div>
+        }
+      </div>
+
+      <form class="contact__form" [formGroup]="form" (ngSubmit)="submit()">
+        <div class="contact__row2">
+          <label class="field">
+            <span class="field__label">Nom</span>
+            <input class="field__input" type="text" formControlName="name" [attr.aria-invalid]="hasError('name')" />
+            @if (hasError('name')) {
+              <span class="field__error">Nom requis.</span>
+            }
+          </label>
+
+          <label class="field">
+            <span class="field__label">Email</span>
+            <input class="field__input" type="email" formControlName="email" [attr.aria-invalid]="hasError('email')" />
+            @if (hasError('email')) {
+              <span class="field__error">Email requis et valide.</span>
+            }
+          </label>
+        </div>
+
+        <label class="field">
+          <span class="field__label">Sujet</span>
+          <input class="field__input" type="text" formControlName="subject" [attr.aria-invalid]="hasError('subject')" />
+          @if (hasError('subject')) {
+            <span class="field__error">Sujet requis.</span>
+          }
+        </label>
+
+        <label class="field">
+          <span class="field__label">Message</span>
+          <textarea
+            class="field__input field__textarea"
+            rows="6"
+            formControlName="message"
+            [attr.aria-invalid]="hasError('message')"
+          ></textarea>
+          @if (hasError('message')) {
+            <span class="field__error">Message requis (min 10 caractères).</span>
+          }
+        </label>
+
+        <div class="btn-row">
+          <button class="btn btn-primary" type="submit" [disabled]="!canSubmit()">Envoyer</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+

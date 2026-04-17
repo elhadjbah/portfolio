@@ -1,0 +1,38 @@
+<section class="hero" id="top">
+  <div class="container hero__inner">
+    <div class="hero__left">
+      <p class="hero__kicker">{{ identity.location }}</p>
+
+      <h1 class="hero__title">
+        <span class="hero__first">{{ identity.firstName }}</span>
+        <span class="hero__last"><em>{{ identity.lastName }}</em></span>
+      </h1>
+
+      <p class="hero__role">{{ identity.title }}</p>
+      <p class="hero__desc">{{ identity.description }}</p>
+
+      <div class="btn-row hero__actions">
+        <button class="btn btn-primary" type="button" (click)="scrollToContact()">Me contacter</button>
+        <a class="btn btn-outline" [href]="identity.cvUrl" target="_blank" rel="noopener">Voir le CV</a>
+      </div>
+    </div>
+
+    <aside class="hero__right" aria-label="Meta">
+      <div class="hero__metaCard">
+        <div class="hero__availability">
+          <span class="pulse" aria-hidden="true"></span>
+          <span class="hero__availabilityText">{{ identity.statusLabel }}</span>
+        </div>
+        <div class="hero__metaLine">
+          <span class="hero__metaLabel">Localisation</span>
+          <span class="hero__metaValue">{{ identity.location }}</span>
+        </div>
+        <div class="hero__metaLine">
+          <span class="hero__metaLabel">Formation</span>
+          <span class="hero__metaValue">{{ identity.education }}</span>
+        </div>
+      </div>
+    </aside>
+  </div>
+</section>
+

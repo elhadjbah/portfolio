@@ -1,0 +1,22 @@
+<section class="section" id="skills">
+  <div class="container">
+    <header class="section-head">
+      <h2 class="section-title">Compétences</h2>
+      <p class="section-subtitle">Un stack orienté production, performance et delivery.</p>
+    </header>
+
+    <div class="skills__grid" role="list">
+      @for (cat of categories; track cat.title) {
+        <article class="skills__cell" role="listitem" [style.grid-column]="'span ' + (cat.span ?? 1)">
+          <h3 class="skills__title">{{ cat.title }}</h3>
+          <div class="skills__tags">
+            @for (t of cat.tags; track t) {
+              <span class="tag">{{ t }}</span>
+            }
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+

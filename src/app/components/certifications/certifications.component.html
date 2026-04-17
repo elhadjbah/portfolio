@@ -1,0 +1,33 @@
+<section class="section" id="certifications">
+  <div class="container">
+    <header class="section-head">
+      <h2 class="section-title">Certifications</h2>
+      <p class="section-subtitle">Badges et preuves de compétences (à compléter).</p>
+    </header>
+
+    @if (hasItems()) {
+      <div class="certs__grid" role="list">
+        @for (c of items(); track c.id) {
+          <article class="certs__card" role="listitem">
+            <div class="certs__logo" aria-hidden="true">{{ logoText(c) }}</div>
+            <div class="certs__body">
+              <h3 class="certs__title">{{ c.title }}</h3>
+              <p class="certs__meta muted">{{ c.issuer }} · {{ c.date }}</p>
+
+              @if (c.credentialUrl) {
+                <a class="certs__link" [href]="c.credentialUrl" target="_blank" rel="noopener">
+                  Voir le credential →
+                </a>
+              }
+            </div>
+          </article>
+        }
+      </div>
+    } @else {
+      <div class="certs__empty">
+        <p class="muted">Certifications à venir</p>
+      </div>
+    }
+  </div>
+</section>
+

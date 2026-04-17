@@ -1,0 +1,55 @@
+<section class="section" id="projects">
+  <div class="container">
+    <header class="section-head">
+      <h2 class="section-title">Projets</h2>
+      <p class="section-subtitle">Quelques réalisations orientées produit et déploiement.</p>
+    </header>
+
+    <div class="projects__grid">
+      @if (featured(); as fp) {
+        <article class="projects__card projects__card--featured">
+          <div class="projects__head">
+            @if (fp.badge) {
+              <span class="tag">{{ fp.badge }}</span>
+            }
+            <h3 class="projects__title">{{ fp.title }}</h3>
+          </div>
+
+          <p class="projects__desc muted">{{ fp.description }}</p>
+
+          <div class="projects__stack">
+            @for (t of fp.stack; track t) {
+              <span class="tag">{{ t }}</span>
+            }
+          </div>
+
+          <div class="btn-row projects__actions">
+            @if (fp.githubUrl) {
+              <a class="btn btn-primary" [href]="fp.githubUrl" target="_blank" rel="noopener">GitHub →</a>
+            }
+            @if (fp.demoUrl) {
+              <a class="btn btn-outline" [href]="fp.demoUrl" target="_blank" rel="noopener">Démo live →</a>
+            }
+          </div>
+        </article>
+      }
+
+      @for (p of others(); track p.id) {
+        <article class="projects__card">
+          <div class="projects__head">
+            <h3 class="projects__title">{{ p.title }}</h3>
+          </div>
+
+          <p class="projects__desc muted">{{ p.description }}</p>
+
+          <div class="projects__stack">
+            @for (t of p.stack; track t) {
+              <span class="tag">{{ t }}</span>
+            }
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+

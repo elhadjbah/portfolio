@@ -1,0 +1,49 @@
+<section id="contact" class="section">
+  <div class="section-header">
+    <span class="section-title">Contact</span>
+  </div>
+
+  <div class="contact-box">
+    <p class="contact-intro">
+      Disponible immédiatement pour un poste en CDI ou mission freelance.
+      N'hésitez pas à me contacter.
+    </p>
+
+    @if (success()) {
+      <div class="success-msg">Message envoyé avec succès !</div>
+    }
+
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+      <div class="contact-row">
+        <div class="field">
+          <input type="text" formControlName="name" placeholder="Votre nom" />
+          @if (submitted() && f['name'].errors) {
+            <span class="error">Champ requis</span>
+          }
+        </div>
+        <div class="field">
+          <input type="email" formControlName="email" placeholder="Email" />
+          @if (submitted() && f['email'].errors) {
+            <span class="error">Email invalide</span>
+          }
+        </div>
+      </div>
+
+      <div class="field">
+        <input type="text" formControlName="subject" placeholder="Sujet" />
+        @if (submitted() && f['subject'].errors) {
+          <span class="error">Champ requis</span>
+        }
+      </div>
+
+      <div class="field">
+        <textarea formControlName="message" placeholder="Votre message..." rows="4"></textarea>
+        @if (submitted() && f['message'].errors) {
+          <span class="error">Message trop court (10 caractères min)</span>
+        }
+      </div>
+
+      <button type="submit" class="btn-primary">Envoyer le message</button>
+    </form>
+  </div>
+</section>

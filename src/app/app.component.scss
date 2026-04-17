@@ -1,0 +1,16 @@
+.page {
+  display: block;
+}
+
+.footer {
+  border-top: 1px solid var(--border);
+  padding: 22px 0 28px;
+}
+
+.footer__inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+

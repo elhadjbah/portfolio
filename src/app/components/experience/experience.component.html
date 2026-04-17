@@ -1,0 +1,32 @@
+<section class="section" id="experience">
+  <div class="container">
+    <header class="section-head">
+      <h2 class="section-title">Parcours</h2>
+      <p class="section-subtitle">Expérience, alternance et formation.</p>
+    </header>
+
+    <div class="timeline" role="list">
+      @for (xp of items; track xp.period + xp.title) {
+        <article class="timeline__item" role="listitem">
+          <div class="timeline__dot" aria-hidden="true"></div>
+          <div class="timeline__content">
+            <p class="timeline__period">{{ xp.period }}</p>
+            <h3 class="timeline__title">
+              {{ xp.title }}
+              @if (xp.company) {
+                <span class="timeline__company">— {{ xp.company }}</span>
+              }
+            </h3>
+
+            <div class="timeline__stack">
+              @for (s of xp.stack; track s) {
+                <span class="tag">{{ s }}</span>
+              }
+            </div>
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
