@@ -1,6 +1,11 @@
 .timeline {
   position: relative;
   padding-left: 26px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+  padding-right: 18px;
 }
 
 .timeline::before {
@@ -19,7 +24,10 @@
   grid-template-columns: 18px 1fr;
   gap: 16px;
   padding: 18px 0;
-  transition: transform var(--t-fast) var(--ease), background var(--t) var(--ease);
+  transition:
+    transform var(--t-fast) var(--ease),
+    background var(--t) var(--ease),
+    border-color var(--t) var(--ease);
 }
 
 .timeline__item + .timeline__item {
@@ -38,11 +46,14 @@
   margin: 0;
   color: var(--text-2);
   font-weight: 700;
+  font-size: 0.86rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
 }
 
 .timeline__title {
   margin: 6px 0 12px;
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   letter-spacing: -0.01em;
 }
 

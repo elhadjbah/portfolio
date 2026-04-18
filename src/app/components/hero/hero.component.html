@@ -1,18 +1,28 @@
 <section class="hero reveal" id="top" style="transition-delay: 0ms">
   <div class="container hero__inner">
     <div class="hero__left">
-      <p class="hero__kicker">{{ identity.location }}</p>
+      <p class="hero__kicker">Full Stack & DevOps Engineer · {{ identity.location }}</p>
 
       <h1 class="hero__title">
-        <span class="hero__first">{{ identity.firstName }}</span>
-        <span class="hero__last"><em>{{ identity.lastName }}</em></span>
+        Je conçois des produits web
+        <span class="hero__titleAccent">fiables, scalables et livrables vite.</span>
       </h1>
 
-      <p class="hero__role">{{ identity.title }}</p>
-      <p class="hero__desc">{{ identity.description }}</p>
+      <p class="hero__role">{{ identity.firstName }} <em>{{ identity.lastName }}</em> — {{ identity.title }}</p>
+      <p class="hero__desc">
+        De l'API Spring Boot au front Angular, jusqu'au déploiement Kubernetes, je couvre la chaîne complète
+        pour transformer un besoin métier en solution robuste et maintenable.
+      </p>
+
+      <div class="hero__proofs" aria-label="Preuves">
+        <span class="hero__proof">2 ans en environnement critique (URSSAF)</span>
+        <span class="hero__proof">Delivery orienté CI/CD et automatisation</span>
+        <span class="hero__proof">Disponible CDI / freelance</span>
+      </div>
 
       <div class="btn-row hero__actions">
         <button class="btn btn-primary" type="button" (click)="scrollToContact()">Me contacter</button>
+        <a class="btn btn-outline" href="#projects">Voir mes projets</a>
         <a class="btn btn-outline" [href]="identity.cvUrl" target="_blank" rel="noopener">Voir le CV</a>
       </div>
     </div>

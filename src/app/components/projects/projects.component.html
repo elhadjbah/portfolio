@@ -8,6 +8,7 @@
     <div class="projects__grid">
       @if (featured(); as fp) {
         <article class="projects__card projects__card--featured proj-card reveal" style="transition-delay: 0ms">
+          <p class="projects__featuredLabel">Projet signature</p>
           <div class="projects__head">
             @if (fp.badge) {
               <span class="tag">{{ fp.badge }}</span>
@@ -16,6 +17,9 @@
           </div>
 
           <p class="projects__desc muted">{{ fp.description }}</p>
+          <p class="projects__impact">
+            Impact: architecture orientée production, UX maintenable et déploiement reproductible.
+          </p>
 
           <div class="projects__stack">
             @for (t of fp.stack; track t) {
@@ -41,6 +45,7 @@
           </div>
 
           <p class="projects__desc muted">{{ p.description }}</p>
+          <p class="projects__impact projects__impact--small">Impact: livraison rapide avec socle technique fiable.</p>
 
           <div class="projects__stack">
             @for (t of p.stack; track t) {

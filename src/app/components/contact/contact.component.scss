@@ -11,6 +11,12 @@
   max-width: 52ch;
 }
 
+.contact__hint {
+  margin: 10px 0 0;
+  font-size: 0.88rem;
+  color: color-mix(in srgb, var(--text-2) 88%, var(--text));
+}
+
 .contact__success {
   margin-top: 14px;
   border: 1px solid color-mix(in srgb, var(--green) 35%, var(--border));
@@ -34,6 +40,7 @@
   border-radius: 10px;
   background: #ffffff;
   padding: 18px;
+  box-shadow: var(--shadow-sm);
 }
 
 .contact__row2 {

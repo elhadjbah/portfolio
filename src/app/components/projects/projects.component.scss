@@ -8,6 +8,8 @@
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 18px;
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
   transition:
     transform var(--t-fast) var(--ease),
     box-shadow var(--t) var(--ease),
@@ -16,6 +18,19 @@
 
 .projects__card--featured {
   grid-column: span 2;
+  padding: 22px;
+  background:
+    linear-gradient(140deg, color-mix(in srgb, var(--accent-soft) 52%, #ffffff), transparent 62%),
+    var(--surface);
+}
+
+.projects__featuredLabel {
+  margin: 0 0 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 11px;
+  color: color-mix(in srgb, var(--accent) 70%, var(--text-2));
+  font-weight: 700;
 }
 
 .projects__head {
@@ -33,6 +48,19 @@
 
 .projects__desc {
   margin: 12px 0 14px;
+}
+
+.projects__impact {
+  margin: -4px 0 14px;
+  padding-left: 12px;
+  border-left: 2px solid color-mix(in srgb, var(--accent) 38%, var(--border));
+  font-size: 0.94rem;
+  color: color-mix(in srgb, var(--text) 90%, var(--text-2));
+  font-weight: 600;
+}
+
+.projects__impact--small {
+  font-size: 0.88rem;
 }
 
 .projects__stack {
