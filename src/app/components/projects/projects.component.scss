@@ -8,6 +8,10 @@
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 18px;
+  transition:
+    transform var(--t-fast) var(--ease),
+    box-shadow var(--t) var(--ease),
+    border-color var(--t) var(--ease);
 }
 
 .projects__card--featured {
@@ -39,6 +43,17 @@
 
 .projects__actions {
   margin-top: 16px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .projects__card:hover {
+    transform: translateY(-3px);
+    box-shadow:
+      0 10px 26px rgba(26, 26, 26, 0.08),
+      0 0 0 1px color-mix(in srgb, var(--accent) 22%, transparent),
+      0 18px 38px rgba(109, 40, 217, 0.08);
+    border-color: color-mix(in srgb, var(--accent) 30%, var(--border));
+  }
 }
 
 @media (max-width: 768px) {

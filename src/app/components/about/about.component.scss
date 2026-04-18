@@ -3,6 +3,25 @@
   grid-template-columns: 1.5fr 1fr;
   gap: 28px;
   align-items: center;
+  position: relative;
+}
+
+.about__layout::before {
+  content: '';
+  position: absolute;
+  inset: -60px -40px;
+  background:
+    radial-gradient(closest-side at 85% 40%, rgba(109, 40, 217, 0.14), transparent 70%),
+    radial-gradient(closest-side at 20% 70%, rgba(167, 139, 250, 0.12), transparent 72%);
+  filter: blur(18px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.about__copy,
+.about__media {
+  position: relative;
+  z-index: 1;
 }
 
 .about__kicker {
@@ -12,6 +31,10 @@
   text-transform: uppercase;
   color: var(--text-2);
   font-weight: 700;
+}
+
+.about__kicker {
+  color: color-mix(in srgb, var(--accent) 75%, var(--text-2));
 }
 
 .about__title {

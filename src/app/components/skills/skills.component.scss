@@ -12,6 +12,7 @@
   padding: 18px;
   border-right: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
+  transition: background var(--t) var(--ease), box-shadow var(--t) var(--ease);
 }
 
 .skills__cell:nth-child(3n) {
@@ -32,6 +33,15 @@
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .skills__cell:hover {
+    background: color-mix(in srgb, var(--tag-bg) 55%, transparent);
+    box-shadow:
+      inset 0 0 0 1px color-mix(in srgb, var(--accent) 16%, transparent),
+      0 10px 24px rgba(109, 40, 217, 0.06);
+  }
 }
 
 @media (max-width: 768px) {
