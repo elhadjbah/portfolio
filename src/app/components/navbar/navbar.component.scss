@@ -11,9 +11,9 @@
 }
 
 .nav--scrolled {
-  background: color-mix(in srgb, var(--bg) 86%, transparent);
+  background: color-mix(in srgb, var(--surface) 82%, transparent);
   border-bottom-color: color-mix(in srgb, var(--border) 80%, transparent);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px);
 }
 
 .nav__inner {
@@ -29,8 +29,10 @@
   border: 0;
   padding: 6px 10px;
   border-radius: 999px;
-  background: transparent;
+  background: var(--surface);
+  border: 1px solid color-mix(in srgb, var(--border) 75%, #ffffff);
   cursor: pointer;
+  box-shadow: var(--shadow-sm);
 }
 
 .nav__logo:focus-visible {
@@ -42,6 +44,7 @@
   font-family: 'DM Serif Display', Georgia, 'Times New Roman', serif;
   font-size: 1.25rem;
   letter-spacing: -0.02em;
+  color: color-mix(in srgb, var(--accent) 60%, var(--text));
 }
 
 .nav__links {
@@ -57,7 +60,7 @@
   padding: 8px 10px;
   border-radius: 999px;
   cursor: pointer;
-  color: var(--text-2);
+  color: color-mix(in srgb, var(--text-2) 88%, var(--text));
   font-weight: 600;
   font-size: 0.95rem;
   transition:
@@ -67,9 +70,9 @@
 }
 
 .nav__link:hover {
-  background: color-mix(in srgb, var(--tag-bg) 80%, transparent);
+  background: color-mix(in srgb, var(--tag-bg) 80%, #ffffff);
   color: var(--text);
-  border-color: color-mix(in srgb, var(--border) 80%, transparent);
+  border-color: color-mix(in srgb, var(--accent) 20%, var(--border));
 }
 
 .nav__link:focus-visible {
@@ -112,7 +115,7 @@
 }
 
 .nav__menu {
-  background: #ffffff;
+  background: var(--surface);
   border-bottom: 1px solid var(--border);
 }
 
@@ -125,7 +128,7 @@
 .nav__menuLink {
   appearance: none;
   border: 1px solid var(--border);
-  background: #ffffff;
+  background: var(--surface);
   padding: 10px 12px;
   border-radius: var(--radius-sm);
   cursor: pointer;
@@ -135,7 +138,7 @@
 }
 
 .nav--open {
-  background: #ffffff;
+  background: var(--surface);
   border-bottom-color: var(--border);
 }
 
