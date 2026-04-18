@@ -16,9 +16,10 @@ export const skillCategories: SkillCategory[] = [
   {
     title: 'Backend',
     tags: [
-      'Java 17',
+      'Java',
       'Spring Boot',
       'Spring Security',
+      'Keycloak',
       'OAuth2/JWT',
       'JPA/Hibernate',
       'REST API',
@@ -42,22 +43,22 @@ export const skillCategories: SkillCategory[] = [
 
 export const experiences: Experience[] = [
   {
-    period: '2022–2024',
+    period: 'septembre 2023– octocbre 2025',
     title: 'Développeur Full Stack & DevOps',
-    company: 'URSSAF Caisse Nationale (Alternance)',
+    company: 'URSSAF Caisse Nationale',
     stack: ['Java/Spring Boot', 'Angular', 'Microservices', 'OAuth2', 'Kubernetes', 'OpenShift', 'GitLab CI', 'ArgoCD']
   },
   {
     period: '2021–2022',
     title: 'Développeur Backend — Stage (APIs REST)',
-    company: '',
-    stack: ['Spring Boot', 'PostgreSQL', 'Docker']
+    company: 'Ministère des Armées STAT - DASIM',
+    stack: ['C++','Spring Boot', 'Docker']
   },
   {
     period: '2020–2024',
-    title: 'Expert Informatique Bac+5',
+    title: 'Expert en Informatique et Système d’Information (Bac+5)',
     company: 'EPSI Toulouse',
-    stack: ['Architecture logicielle', 'DevOps', 'Cloud']
+    stack: ['Architecture logicielle', 'DevOps', 'Cloud', 'Stratégie système d’informatione']
   }
 ];
 
@@ -66,11 +67,11 @@ export const projects: Project[] = [
     id: 1,
     badge: 'Projet perso',
     featured: true,
-    title: 'Application de gestion de produits',
+    title: 'Application de gestion d\'utilisaters, de produits',
     description:
-      "Full stack CRUD, Angular + Spring Boot, pipeline CI/CD, déployée sur Kubernetes.",
-    stack: ['Spring Boot', 'Angular', 'Kubernetes', 'Docker', 'CI/CD', 'REST API'],
-    githubUrl: undefined,
+      "Full stack, Service Authentification/Users, Angular + Spring Boot, pipeline CI/CD, déployée sur Kubernetes.",
+    stack: ['Spring Boot', 'Angular', 'Microservice', 'Kubernetes', 'Docker', 'CI/CD', 'REST API'],
+    githubUrl: "https://github.com/elhadj-cloud-lab",
     demoUrl: undefined
   },
   {
@@ -113,6 +114,20 @@ export const projects: Project[] = [
  */
 export const certifications: Certification[] = [
   // Ajoute tes certifications ici
+  {
+    id: 1,
+    title: 'AWS Certified Cloud Practitioner en cours',
+    issuer: '',
+    date: '',
+    credentialUrl: ''
+  },
+  {
+    id: 2,
+    title: 'Certified Kubernetes Application Developer (CKAD) en cours',
+    issuer: '',
+    date: '',
+    credentialUrl: ''
+  }
 ];
 
 export const navLinks = [
