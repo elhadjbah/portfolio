@@ -3,10 +3,12 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "npm run generate:runtime-config && ng serve",
+    "generate:runtime-config": "node scripts/generate-runtime-config.mjs",
     "build": "ng build",
+    "build:prod:local": "npm run generate:runtime-config && ng build --configuration production",
     "build:gh": "ng build --base-href ./",
-    "watch": "ng build --watch --configuration development",
+    "watch": "npm run generate:runtime-config && ng build --watch --configuration development",
     "test": "ng test",
     "deploy": "npm run build:gh && gh-pages -d dist/portfolio/browser"
   },
@@ -31,13 +33,17 @@
     "@angular/forms": "^21.0.0",
     "@angular/platform-browser": "^21.0.0",
     "@angular/router": "^21.0.0",
+    "@emailjs/browser": "^4.4.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0"
   },
   "devDependencies": {
+    "@angular-builders/custom-webpack": "^21.0.3",
     "@angular/build": "^21.2.3",
     "@angular/cli": "^21.0.3",
     "@angular/compiler-cli": "^21.0.0",
+    "@types/node": "^25.6.0",
+    "dotenv": "^17.4.2",
     "gh-pages": "^6.3.0",
     "jsdom": "^27.1.0",
     "typescript": "~5.9.3",

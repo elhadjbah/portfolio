@@ -11,6 +11,21 @@
   display: grid;
   grid-template-columns: 44px 1fr;
   gap: 14px;
+  transition:
+    transform var(--t-fast) var(--ease),
+    box-shadow var(--t) var(--ease),
+    border-color var(--t) var(--ease);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .certs__card:hover {
+    transform: translateY(-3px);
+    box-shadow:
+      0 10px 26px rgba(26, 26, 26, 0.08),
+      0 0 0 1px color-mix(in srgb, var(--accent) 22%, transparent),
+      0 18px 38px rgba(109, 40, 217, 0.08);
+    border-color: color-mix(in srgb, var(--accent) 30%, var(--border));
+  }
 }
 
 .certs__logo {

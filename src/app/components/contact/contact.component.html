@@ -18,6 +18,12 @@
             Message envoyé. Merci, je reviens vers toi rapidement.
           </div>
         }
+
+        @if (errorMessage()) {
+          <div class="contact__error" role="alert" aria-live="assertive">
+            {{ errorMessage() }}
+          </div>
+        }
       </div>
 
       <form class="contact__form" [formGroup]="form" (ngSubmit)="submit()">
@@ -80,7 +86,13 @@
         </label>
 
         <div class="btn-row">
-          <button class="btn btn-primary" type="submit" [disabled]="!canSubmit()">Envoyer le message</button>
+          <button class="btn btn-primary" type="submit" [disabled]="!canSubmit()">
+            @if (isSending()) {
+              Envoi...
+            } @else {
+              Envoyer le message
+            }
+          </button>
         </div>
       </form>
     </div>

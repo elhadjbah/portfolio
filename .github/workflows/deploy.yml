@@ -23,6 +23,13 @@ jobs:
       - name: Install
         run: npm ci
 
+      - name: Generate runtime config
+        run: npm run generate:runtime-config
+        env:
+          EMAILJS_PUBLIC_KEY: ${{ secrets.EMAILJS_PUBLIC_KEY }}
+          EMAILJS_SERVICE_ID: ${{ secrets.EMAILJS_SERVICE_ID }}
+          EMAILJS_TEMPLATE_ID: ${{ secrets.EMAILJS_TEMPLATE_ID }}
+
       - name: Build
         run: npm run build -- --base-href "/${{ github.event.repository.name }}/"
 
