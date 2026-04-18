@@ -10,18 +10,43 @@ permissions:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: 22
           cache: npm
 
       - name: Install
         run: npm ci
+
+      - name: Validate required EmailJS secrets
+        env:
+          EMAILJS_PUBLIC_KEY: ${{ secrets.EMAILJS_PUBLIC_KEY }}
+          EMAILJS_SERVICE_ID: ${{ secrets.EMAILJS_SERVICE_ID }}
+          EMAILJS_TEMPLATE_ID: ${{ secrets.EMAILJS_TEMPLATE_ID }}
+        run: |
+          missing=0
+          if [ -z "$EMAILJS_PUBLIC_KEY" ]; then
+            echo "::error::Missing secret EMAILJS_PUBLIC_KEY"
+            missing=1
+          fi
+          if [ -z "$EMAILJS_SERVICE_ID" ]; then
+            echo "::error::Missing secret EMAILJS_SERVICE_ID"
+            missing=1
+          fi
+          if [ -z "$EMAILJS_TEMPLATE_ID" ]; then
+            echo "::error::Missing secret EMAILJS_TEMPLATE_ID"
+            missing=1
+          fi
+          if [ "$missing" -eq 1 ]; then
+            exit 1
+          fi
 
       - name: Generate runtime config
         run: npm run generate:runtime-config
