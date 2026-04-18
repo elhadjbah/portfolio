@@ -10,10 +10,10 @@ import { CommonModule } from '@angular/common';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AboutComponent {
-  readonly hasPhoto = signal(false);
+  readonly hasPhoto = signal(true);
 
   readonly metrics = computed(() => [
-    { label: "2 ans d'XP" },
+    { label: "2+ ans d'XP" },
     { label: '5+ projets' },
     { label: 'Bac +5 EPSI' }
   ]);
