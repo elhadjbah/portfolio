@@ -5,7 +5,7 @@ export const portfolioIdentity = {
   lastName: 'BAH',
   title: 'Développeur Full Stack & DevOps',
   location: 'Toulouse, France',
-  statusLabel: 'Disponible immédiatement (CDI ou freelance)',
+  statusLabel: 'Disponible immédiatement (CDD, CDI ou freelance)',
   education: 'Bac +5 Expert en Informatique et Système d\'information\nEPSI Toulouse',
   description:
     "Java · Spring Boot · Angular · Kubernetes · CI/CD — Je conçois\net déploie des applications robustes, de l'API à la production.",
