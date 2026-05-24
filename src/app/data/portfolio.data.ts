@@ -5,8 +5,8 @@ export const portfolioIdentity = {
   lastName: 'BAH',
   title: 'Développeur Full Stack & DevOps',
   location: 'Toulouse, France',
-  statusLabel: 'Disponible immédiatement (CDI ou freelance)',
-  education: 'Bac +5 Expert en Informatique et Système d\'information — EPSI Toulouse',
+  statusLabel: 'Disponible immédiatement (CDD, CDI ou freelance)',
+  education: 'Bac +5 Expert en Informatique et Système d\'information\nEPSI Toulouse',
   description:
     "Java · Spring Boot · Angular · Kubernetes · CI/CD — Je conçois\net déploie des applications robustes, de l'API à la production.",
   cvUrl: 'assets/cv-elhadj-bah.pdf'
@@ -67,14 +67,24 @@ export const projects: Project[] = [
     id: 1,
     badge: 'Projet perso',
     featured: true,
-    title: 'Application de gestion d\'utilisaters, de produits',
+    title: 'Plateforme e-commerce — Microservices',
     description:
-      "Full stack, Service Authentification/Users, Angular + Spring Boot, pipeline CI/CD, déployée sur Kubernetes.",
-    stack: ['Spring Boot', 'Angular', 'Microservice', 'Kubernetes', 'Docker', 'CI/CD', 'REST API'],
+      "Architecture microservices (auth, API produits, frontend). Pipeline CI/CD complète (GitHub Actions, SonarQube(En cours)). Déploiement GitOps sur Kubernetes/OpenShift avec Argo CD (En cours). Authentification JWT avec refresh tokens et session Redis (En cours).",
+    stack: ["Spring Boot", "Angular", "Docker", "Kubernetes", "Argo CD", "Redis", "SonarQube", "JWT", "GitHub Actions"],
     githubUrl: "https://github.com/elhadj-cloud-lab",
     demoUrl: undefined
   },
   {
+    id: 2,
+/*    badge: "Projet perso",
+    featured: true,*/
+    title: "PANG - Digitalisation Santé & État Civil (Transformation numérique de la Guinée)",
+    description: "Plateforme nationale pour digitaliser l'état civil (naissances, décès, mariages) et les services de santé (RDV, dossier patient, tableau de bord ministériel). Solution inclusive (SMS, faible connexion, zones rurales).",
+    stack: ["Architecture Microservices", "API REST", "Java/Spring Boot", "Angular"],
+/*    githubUrl: undefined,
+    demoUrl: undefined,*/
+  },
+  /*{
     id: 2,
     title: 'Plateforme de gestion URSSAF',
     description: 'Application métier et évolutions sur un SI critique.',
@@ -97,7 +107,7 @@ export const projects: Project[] = [
     title: 'Dashboard Angular temps réel',
     description: 'Tableaux de bord en streaming pour données live.',
     stack: ['Angular', 'RxJS', 'WebSocket']
-  }
+  }*/
 ];
 
 /**
