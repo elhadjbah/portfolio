@@ -49,8 +49,8 @@ export const experiences: Experience[] = [
     stack: ['Java/Spring Boot', 'Angular', 'Microservices', 'OAuth2', 'Kubernetes', 'OpenShift', 'GitLab CI', 'ArgoCD']
   },
   {
-    period: '2021–2022',
-    title: 'Développeur Backend — Stage (APIs REST)',
+    period: 'avril – aout 2023',
+    title: 'Développeur Backend — (Stage)',
     company: 'Ministère des Armées STAT - DASIM',
     stack: ['C++','Spring Boot', 'Docker']
   },
