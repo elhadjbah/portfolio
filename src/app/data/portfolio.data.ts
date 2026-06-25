@@ -9,7 +9,7 @@ export const portfolioIdentity = {
   education: 'Bac +5 Expert en Informatique et Système d\'information\nEPSI Toulouse',
   description:
     "Java · Spring Boot · Angular · Kubernetes · CI/CD — Je conçois\net déploie des applications robustes, de l'API à la production.",
-  cvUrl: 'assets/cv-elhadj-bah.pdf'
+  cvUrl: 'assets/Cv-Elhadj-Dev-Full-Stack.pdf'
 } as const;
 
 export const skillCategories: SkillCategory[] = [
@@ -33,11 +33,11 @@ export const skillCategories: SkillCategory[] = [
   },
   {
     title: 'DevOps & Cloud',
-    tags: ['Docker', 'Kubernetes', 'OpenShift', 'GitLab CI/CD', 'ArgoCD', 'GitHub Actions']
+    tags: ['Docker', 'Kubernetes', 'OpenShift', 'GitLab CI/CD', 'GitHub Actions', 'ArgoCD']
   },
   {
     title: 'Outils & méthodes',
-    tags: ['PostgreSQL', 'MongoDB', 'Git', 'Sonar', 'Scrum/Agile', 'Jira', 'Postman']
+    tags: ['PostgreSQL', 'MySQL', 'MongoDB', 'Git', 'Sonar', 'Scrum/Agile', 'Jira', 'Postman']
   }
 ];
 
@@ -45,20 +45,20 @@ export const experiences: Experience[] = [
   {
     period: 'septembre 2023– octocbre 2025',
     title: 'Développeur Full Stack & DevOps',
-    company: 'URSSAF Caisse Nationale',
+    company: 'URSSAF Caisse Nationale, Toulouse',
     stack: ['Java/Spring Boot', 'Angular', 'Microservices', 'OAuth2', 'Kubernetes', 'OpenShift', 'GitLab CI', 'ArgoCD']
   },
   {
     period: 'avril – aout 2023',
     title: 'Développeur Backend — (Stage)',
-    company: 'Ministère des Armées STAT - DASIM',
+    company: 'Ministère des Armées STAT - DASIM Saumur',
     stack: ['C++','Spring Boot', 'Docker']
   },
   {
     period: '2020–2024',
     title: 'Expert en Informatique et Système d’Information (Bac+5)',
     company: 'EPSI Toulouse',
-    stack: ['Architecture logicielle', 'DevOps', 'Cloud', 'Stratégie système d’informatione']
+    stack: ['Architecture logicielle', 'DevOps', 'Cloud', 'Stratégie système d’informatione', 'Big data & Machine Learning']
   }
 ];
 
@@ -69,7 +69,7 @@ export const projects: Project[] = [
     featured: true,
     title: 'Plateforme e-commerce — Microservices',
     description:
-      "Architecture microservices (auth, API produits, frontend). Pipeline CI/CD complète (GitHub Actions, SonarQube(En cours)). Déploiement GitOps sur Kubernetes/OpenShift avec Argo CD (En cours). Authentification JWT avec refresh tokens et session Redis (En cours).",
+      "Architecture microservices (auth, API produits, frontend). Pipeline CI/CD complète (GitHub Actions, SonarQube). Déploiement GitOps sur Kubernetes/OpenShift avec Argo CD (En cours). Authentification JWT avec refresh tokens et session Redis.",
     stack: ["Spring Boot", "Angular", "Docker", "Kubernetes", "Argo CD", "Redis", "SonarQube", "JWT", "GitHub Actions"],
     githubUrl: "https://github.com/elhadj-cloud-lab",
     demoUrl: undefined
@@ -80,7 +80,7 @@ export const projects: Project[] = [
     featured: true,*/
     title: "PANG - Digitalisation Santé & État Civil (Transformation numérique de la Guinée)",
     description: "Plateforme nationale pour digitaliser l'état civil (naissances, décès, mariages) et les services de santé (RDV, dossier patient, tableau de bord ministériel). Solution inclusive (SMS, faible connexion, zones rurales).",
-    stack: ["Architecture Microservices", "API REST", "Java/Spring Boot", "Angular"],
+    stack: ["Architecture Microservices", "API REST", "Java/Spring Boot", "Angular", "Docker", "Kubernetes", "Argo CD", "Redis", "SonarQube"],
 /*    githubUrl: undefined,
     demoUrl: undefined,*/
   },
