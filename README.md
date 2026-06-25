@@ -25,15 +25,6 @@ Puis ouvrir `http://localhost:4200/`.
 
 Ajoute un objet dans le tableau `certifications` de `src/app/data/portfolio.data.ts` (exemple fourni en JSDoc dans le fichier).
 
-## CV (PDF)
-
-Le bouton “Voir le CV” pointe vers `assets/cv-elhadj-bah.pdf`.
-
-Place ton fichier ici:
-
-- `public/assets/cv-elhadj-bah.pdf`
-
-(le dossier `public/` est publié tel quel par Angular).
 
 ## Déploiement automatique sur GitHub Pages (GitHub Actions)
 
@@ -45,10 +36,8 @@ Le workflow `/.github/workflows/deploy.yml` déploie à chaque push sur `main`:
 
 ### Étapes GitHub
 
-1. Pousse le dépôt sur GitHub (branche `main`).
-2. Dans GitHub: **Settings → Pages**
-3. **Build and deployment**: sélectionne la source **Deploy from a branch**
-4. Choisis la branche **gh-pages** et le dossier **/**.
+1. Push dépôt sur GitHub (branche `main`).
+2**Build and deploy auto**
 
-Le site sera servi sur `https://<user>.github.io/<repo>/`.
+Site accessible sur `https://elhadjbah.github.io/portfolio/`.
 

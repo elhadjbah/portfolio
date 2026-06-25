@@ -14,7 +14,7 @@ export class AboutComponent {
 
   readonly metrics = computed(() => [
     { label: "2+ ans d'XP" },
-    { label: '5+ projets' },
+    { label: '+ projets' },
     { label: 'Bac +5 EPSI' }
   ]);
 }
